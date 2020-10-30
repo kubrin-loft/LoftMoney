@@ -1,18 +1,14 @@
 package com.kubrin.loftmoney;
 
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.kubrin.loftmoney.cells.MoneyCellAdapter;
-import com.kubrin.loftmoney.cells.MoneyCellAdapterClick;
-import com.kubrin.loftmoney.cells.MoneyItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,21 +22,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        configureRecyclerView();
+        FrameLayout fragment = findViewById(R.id.frame);
 
-        generateMoney();
+        Fragment frag2 = new BudgetFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.frame, frag2).commit();
+
+
+        /*findViewById(R.id.itemsView);
+        configureRecyclerView();
+        generateMoney();*/
     }
-    private void generateMoney(){
-        List<MoneyItem> moneyItems = new ArrayList<>();
+
+    private void generateMoney() {
+       /* List<MoneyItem> moneyItems = new ArrayList<>();
         moneyItems.add(new MoneyItem("PS5", "30000"));
         moneyItems.add(new MoneyItem("Salary", "50000Р"));
 
-        moneyCellAdapter.setData(moneyItems);
+        moneyCellAdapter.setData(moneyItems);*/
 
 
     }
-    private  void configureRecyclerView() {
-        itemsView = findViewById(R.id.itemsView);
+
+    private void configureRecyclerView() {
+
+        /*itemsView = findViewById(R.id.itemsView);
         itemsView.setAdapter(moneyCellAdapter);
 
         MoneyCellAdapter.moneyCellAdapterClick = new MoneyCellAdapterClick() {
@@ -61,5 +66,6 @@ public class MainActivity extends AppCompatActivity {
                LinearLayoutManager.VERTICAL, false);
         itemsView.setLayoutManager(layoutManager);
 
+    }*/
     }
 }
