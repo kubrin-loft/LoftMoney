@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-         />
+        />
     <Button
         android:id="@+id/call_add_item_activity"
         android:text="Add"

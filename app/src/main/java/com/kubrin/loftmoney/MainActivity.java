@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         itemsView = findViewById(R.id.itemsView);
         itemsView.setAdapter(moneyCellAdapter);
 
-        moneyCellAdapter.moneyCellAdapterClick = new MoneyCellAdapterClick() {
+        MoneyCellAdapter.moneyCellAdapterClick = new MoneyCellAdapterClick() {
             @Override
             public void oneCellClick(MoneyItem moneyItem) {
                 Toast.makeText(getApplicationContext(), "Cell clicked" + moneyItem.getValue(), Toast.LENGTH_LONG).show();
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTitleClick() {
-                Toast.makeText(getApplicationContext(), "Title clicked!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Title clicked", Toast.LENGTH_LONG).show();
 
             }
         };
